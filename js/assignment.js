@@ -670,7 +670,7 @@ $(document).on('click','.searchData',()=>{
   let keywords = $("#keywords").val();
   if (arr_keys!='') {
     if (keywords!='') {
-      let filteredData = JsonData.filter(function(e) {
+      let filteredData = JsonData.filter((e)=> {
         return (e[arr_keys].toString().indexOf(keywords)!== -1);
       });
       console.log(filteredData);
