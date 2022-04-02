@@ -137,9 +137,7 @@
 // const a = []
 // a = [1203]
 
-
 //~~~~~~~~~~~ Class 2 ~~~~~~~~~~~
-
 
 // let a = ['a','b','c'];
 // let b = [
@@ -179,11 +177,9 @@
 //     console.log(a[i])
 // }
 
-// b.forEach(function(x){
-//   if (x.category=='a') {
-//     console.log(x)
-//   }
-// });
+// a.forEach(function(x){
+//   console.log(x)
+// })
 
 // let filterItem = a.filter(function(z){
 //     if(z < 6){
@@ -254,3 +250,230 @@
 // let bool =  num1-num2 ? 'number Exist' :"number doesn't exist"
 
 // console.log(bool)
+
+// let a = {
+//   id: 1,
+//   title: "abc",
+// };
+
+// let keys = Object.keys(a);
+// let values = Object.values(a);
+// console.log(values);
+
+// var a = ["asd"];
+// var b = a;
+
+// b.push("abc");
+// console.log(a);
+
+// let a = {
+//   id: 1,
+//   name: "abc",
+// };
+// let b = 123;
+
+// function ab() {
+//   a.name = "xyz";
+//   b = 456;
+// }
+// ab();
+// console.log(a);
+// console.log(b);
+
+// ====== De Structure ==========
+// let a = {
+//   id: 1,
+//   name: "abc",
+//   category: "C",
+// };
+
+// let { name, id, category } = a;
+
+// console.log(category);
+
+// let a = {
+//   id: 1,
+//   title: "abc",
+//   b: {
+//     id: 32,
+//     subName: "xyz",
+//     arr: [1, 2, 3],
+//   },
+// };
+
+// let { id } = a.b;
+
+// console.log(id);
+
+// let a = ["abc", "def", "ghi", "jkl", [1, 2, 3, 4, 5]];
+
+// let [firstIndexValue, val2, , forthVal] = a[4];
+
+// console.log(val2);
+
+// let [val1, val2, val3] = a.b.arr;
+
+// let a = ["abc", "def", "ghi", "jkl", [1, 2, 3, 4, 5], { id: 1, name: "abc" }];
+
+// let [val1, val2] = a[4];
+
+// console.log(val1, val2);
+
+// ==================== spread Operator ============
+
+// let masterDetail = {
+//   institute: "SAIMS",
+//   batch: 456,
+//   GRN: "ab12345",
+// };
+
+// let duplicateMaster = {
+//   ...masterDetail,
+// };
+
+// masterDetail.GRN = 2564560127;
+
+// console.log(duplicateMaster);
+
+// let a = ["a", "b", "c"];
+// let b = [...a];
+
+// a.push("d");
+
+// console.log(b);
+
+// let a = ["a", "b", "c"];
+// let b = [1, 2, 3, ...a];
+// console.log(b);
+
+// let a = "abc";
+
+// function ab() {
+//   let a = 123;
+//   console.log(a);
+// }
+
+// lexical scoping
+// types of function
+// closures
+// promise
+
+// let a = "xyz";
+
+// function ab() {
+//   let a = "abc";
+//   console.log(a);
+// }
+
+// TYPES OF FUNCTION
+
+// *** arrow function
+
+// let abc = (a) => {
+//   console.log(a);
+// };
+
+// abc("Message");
+
+// let xyz = (a) => {
+//   return a;
+// };
+
+// console.log(xyz("Hello Basit Ahmed"));
+
+// let abc = a => {
+//   console.log(a);
+// };
+
+// abc('Hello')
+
+// let abc = (a,b) => {
+//   console.log(a);
+//   console.log(b);
+// };
+
+// abc('Hello','World')
+
+// let a = () => 'asdasd';
+
+// console.log(a())
+
+// let a = _ => _
+
+// let a = (a, b) => a == b ? "Match" : "Not Match";
+
+// console.log(a(10, 11));
+
+//*** Higher Order Function
+
+
+// let a = e=>{
+//   console.log(e)
+// }
+
+// let b = (bval)=>{
+
+//   return bval
+// }
+
+
+// a(b('Hello JS'))
+
+
+// let a = (e)=>{
+//   return ()=>{ 
+//     return ()=>{
+//       let a = e
+//     }
+//   }
+// }
+
+// a('hjakshdkj')()()
+
+
+// let a = (e)=>{
+//   if(e){
+//     console.log('if Scope')
+//   }else{
+//     console.log('else Scope')
+//   }
+// }
+
+// a()
+
+
+
+
+
+// let a = (e = 'Dummy')=>{
+//   console.log(e)
+// }
+// a()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//*** call back Function
+
+
+
+
+

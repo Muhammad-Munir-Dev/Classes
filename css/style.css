@@ -1,0 +1,41 @@
+.Box-Panel-Wrapper {
+  border-radius: 5px;
+  background: #fff;
+  padding: 30px 20px;
+  box-shadow: 2px 1px 5px 2px rgb(0 0 0 / 20%);
+}
+.formWrapper .form-group {
+	margin-bottom: 30px
+}
+.formWrapper .form-group>.control-group>label {
+	font-weight: 500;
+	color: #64676d
+}
+.formWrapper .form-group>input,
+.formWrapper .form-group>select {
+	font-size: 16px;
+	border: none;
+	border-bottom: 2px solid #d5d5d5;
+	background: transparent;
+	border-radius: 0;
+	padding-left: 0
+}
+.formWrapper .form-group>select.form-control:not([size]):not([multiple]) {
+	height: calc(2.5rem + 5px)!important
+}
+.formWrapper .form-group>textarea {
+	font-size: 14px;
+	background: transparent;
+	border: 2px solid #d5d5d5
+}
+
+.formWrapper .form-group>input.error,
+.formWrapper .form-group>select.error {
+	border-bottom: 2px solid red!important
+}
+h1,h2,h3,h4,h5,h6,label{
+	color: #64676d;
+}
+input,select:focus{
+	box-shadow: none!important;
+}
