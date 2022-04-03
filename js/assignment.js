@@ -656,11 +656,11 @@ let JsonData = [
     "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut"
   }
 ];
-var filterKeys = Object.keys(JsonData.reduce(function(result, obj) {
+var filterKeys = Object.keys(JsonData.reduce((result, obj)=> {
   return Object.assign(result, obj);
 }, {}))
 let options = `<option value="">-- Select --</option>`;
-let appendItem = filterKeys.forEach(function(e){
+let appendItem = filterKeys.forEach((e)=>{
   options+=`<option value='${e}'>${e.toUpperCase().replace('_',' ')}</option>`
 })
 $("#arr_keys").html(options)
