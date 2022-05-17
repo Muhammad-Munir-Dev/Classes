@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+}
+
+button{
+  padding: 10px;
+  margin: 5px;
+  background-color: lightblue;
+}
+.card{
+  width: 200px;
+  display: inline-block;
+  border: 1px solid grey;
+}

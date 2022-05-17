@@ -1,0 +1,149 @@
+.App {
+  text-align: center;
+}
+.css-83ijpv-MuiTypography-root{
+	font-weight: bold!important;
+}
+.MuiBox-root{
+	color: #000 !important;
+}
+.w-100{
+	width: 100% !important;
+}
+/*=========================== Menu ============================*/
+.menubar{
+	min-height: 44px !important;
+	padding: 0px 1rem;
+	cursor: pointer;
+	font-size: 0.9rem !important;
+}
+.li{
+	color: #000;
+    padding: 0px 5px;
+    min-width: 100px;
+    font-weight: 600 !important;
+    font-family: sans-serif;
+}
+.category_li{
+    font-weight: 600 !important;
+    display: flex !important;
+    -webkit-box-pack: justify !important;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center !important;
+    border-right: 1px solid rgb(226, 229, 241) !important;
+    color: rgb(56, 102, 223) !important;
+}
+/*=========================== Menu ============================*/
+/*=========================== Section ============================*/
+.SectionOne, .SectionFour, .SectionSix{
+    background: rgb(235, 235, 235);
+    padding: 15px 10px;
+}
+.SectionTwo{
+    background: #faf29c;
+    padding: 10px 10px;
+}
+.SectionFive{
+    background: rgb(243, 224, 8);
+}
+.SectionSeven,.SectionEight{
+    background: #e1effa;
+}
+.SectionNine{
+    background: rgb(255 243 221);
+}
+.items{
+    background: rgb(243, 224, 8)!important;
+}
+.mb-2{
+    margin-bottom: 1.5rem;
+}
+.mb-4{
+    margin-bottom: 2.5rem;
+}
+.toys{
+    padding: 10px 15px;
+}
+.toy_img{
+    width: 180px;
+    padding: 0px 5px;
+}
+.fashion_img{
+    width: 150px;
+    padding: 0px 8px;
+}
+.accessories_img{
+    width: 170px;
+    padding: 0px 10px;
+}
+.grocery_img{
+    width: 190px;
+    padding: 0px 10px;
+}
+.my-2,.mx-2{
+    margin:15px 0px;
+}
+/*=========================== Section ============================*/
+/*=========================== Card ============================*/
+.card{
+    display: flex;
+    padding: 10px;
+    background: #f7f7fa;
+}
+.card .card-item{
+    margin: 10px;
+}
+.card-item{
+    /*min-width: 345px;*/
+    padding: 15px;
+}
+.get100off {
+    max-width: 100%!important;
+    -webkit-box-align: center!important;
+    align-items: center!important;
+    border: 1px solid!important;
+    color: rgb(56, 102, 223)!important;
+    background-color: rgba(255, 255, 255, 0.9)!important;
+    padding: 4px 4px!important;
+    margin-bottom: 5px!important;
+}
+.get100offtext {
+    flex: 1 1 0%!important;
+    text-transform: uppercase!important;
+    font-size: 10px!important;
+    line-height: 12px!important;
+    font-weight: 600!important;
+    overflow: hidden!important;
+    text-overflow: ellipsis!important;
+    white-space: nowrap!important;
+}
+.card-price{
+        padding-left: 15px !important;
+}
+.oldPrice {
+    text-decoration: line-through;
+    color: rgb(126, 133, 155);
+    margin-right: 4px;
+}
+.discount {
+    color: rgb(56, 174, 4) !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+}
+.card-price-sp{
+    font-size: 12px;
+}
+.card .card-price-sp1{
+    font-size: 14px !important;
+}
+.card .card-price-sp span{
+    font-size: 12px !important;
+}
+.bold{
+    font-weight: bold !important;
+}
+.px-2{
+    padding: 1rem 1rem;
+}
+/*=========================== Card ============================*/

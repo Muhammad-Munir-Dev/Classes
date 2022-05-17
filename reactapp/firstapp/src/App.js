@@ -1,83 +1,204 @@
-import React, { useState } from 'react';
-import "./quiz.css";
+import logo from "./logo.svg";
 import "./App.css";
+import { useState } from "react";
+import Card from "./components/card";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import CheckIcon from "@mui/icons-material/Check";
+import CloseIcon from "@mui/icons-material/Close";
 
 function App() {
-  const questions = [
+  const [arr, setArray] = useState([
     {
-      questionText: 'Who is Current PM of Pakistan?',
-      answerOptions: [
-        { answerText: 'Nawaz Sharif', isCorrect: false },
-        { answerText: 'Imran Khan', isCorrect: false },
-        { answerText: 'Asif Zardari', isCorrect: false },
-        { answerText: 'Shehbaz Sharif', isCorrect: true },
-      ],
+      id: 1,
+      titile: "ABC12",
+      price: 250,
     },
     {
-      questionText: 'Who is the captain of Pakistan Team?',
-      answerOptions: [
-        { answerText: 'Sarfraz Ahmed', isCorrect: false },
-        { answerText: 'Babar Azam', isCorrect: true },
-        { answerText: 'Muhammad Rizwan', isCorrect: false },
-        { answerText: 'Shadad Khan', isCorrect: false },
-      ],
+      id: 2,
+      titile: "ABC12",
+      price: 250,
     },
     {
-      questionText: 'What is the capital of Pakistan?',
-      answerOptions: [
-        { answerText: 'Karachi', isCorrect: false },
-        { answerText: 'Lahore', isCorrect: false },
-        { answerText: 'Islamabad', isCorrect: true },
-        { answerText: 'Peshawar', isCorrect: false },
-      ],
+      id: 3,
+      titile: "ABC12",
+      price: 250,
     },
     {
-      questionText: 'React was initialy release on ?',
-      answerOptions: [
-        { answerText: 'May 29, 2011', isCorrect: false },
-        { answerText: 'May 29, 2012', isCorrect: false },
-        { answerText: 'May 29, 2013', isCorrect: true },
-        { answerText: 'May 29, 2014', isCorrect: false },
-      ],
+      id: 4,
+      titile: "ABC12",
+      price: 250,
     },
-  ];
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [showScore, setShowScore] = useState(false);
+    {
+      id: 5,
+      titile: "ABC12",
+      price: 250,
+    },
+    {
+      id: 6,
+      titile: "ABC12",
+      price: 250,
+    },
+  ]);
+  const [questions, setQuestions] = useState([
+    {
+      answer: "Namibia",
+      options: ["Namibia", "Niger", "Chad", "Ghana"],
+      question: "Windhoek is the capital of__________?",
+    },
+    {
+      answer: "Euro",
+      options: ["Zolty", "Peso", "Euro", "Escudo"],
+      question: "The currency of portugal is__________?",
+    },
+    {
+      answer: "Almaty",
+      options: ["Astana", "Almaty", "Baku", "Tashkent"],
+      question:
+        "Which of the following city served as capital of Kazakhstan till 1997?",
+    },
+    {
+      answer: "North Atlantic Ocean",
+      options: [
+        "North Atlantic Ocean",
+        "South Atlantic Ocean",
+        "Pacific Ocean",
+        "Arabian Sea",
+      ],
+      question: "Bermuda Triangle is located in__________?",
+    },
+    {
+      answer: "Ramon Magsaysay Award",
+      options: [
+        "Ramon Magsaysay Award",
+        "Booker Prize",
+        "Pulitzer Prize",
+        "None of them",
+      ],
+      question:
+        "Which among the following is known as Asia a version of “Noble prize”?",
+    },
+    {
+      answer: "Geneva",
+      options: ["London", "Geneva", "Rome", "Paris"],
+      question: "The headquarter of EFTA is in_____________?",
+    },
+    {
+      answer: "China",
+      options: ["Japan", "China", "South Koera", "None of These"],
+      question:
+        "Which country Built A 250-Acre Solar Farm Shaped Like A Giant Panda:",
+    },
+    {
+      answer: "White Bellbird",
+      options: ["Macaws", "Cockatoos", "White Bellbird", "None of these"],
+      question: "________ is the World’s Loudest Bird",
+    },
+    {
+      answer: "Feb 29",
+      options: ["Feb 29", "Feb 28", "March 01", "Feb 01"],
+      question: "_______ is known as leap day or leap year day",
+    },
+    {
+      answer: "China",
+      options: ["Japan", "Russia", "China", "None of These"],
+      question: "Where is the World’s longest sea bridge ?",
+    },
+  ]);
+  const [indexNum, setIndexNum] = useState(0);
   const [score, setScore] = useState(0);
+  const [showQuestion, setShowQuestion] = useState(true);
+  const [showStatusCorrect, setShowStatusCorrect] = useState(false);
 
-  const handleAnswerOptionClick = (isCorrect) => {
-    if (isCorrect) {
+  let addToCart = () => {
+    console.log("Add To Cart");
+  };
+  let checkQuestion = (correctVal, selectedVal) => {
+    if (correctVal == selectedVal) {
       setScore(score + 1);
-    }
-
-    const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
-      setCurrentQuestion(nextQuestion);
+      setShowStatusCorrect(true);
     } else {
-      setShowScore(true);
+      setShowStatusCorrect(false);
+    }
+    console.log(indexNum);
+    console.log(questions.length);
+    // if (nextQuestion == questions.length) {
+    //   setQuestions(false);
+    // } else {
+    //   setIndexNum(nextQuestion);
+    // }
+    const nextQuestion = indexNum + 1;
+    if (nextQuestion < questions.length) {
+      setIndexNum(nextQuestion);
+    } else {
+      setQuestions(false);
     }
   };
   return (
-    <div className='app'>
-      {showScore ? (
-        <div className='score-section'>
-          You scored {score} out of {questions.length}
+    <div className="App">
+      <header className="App-header container">
+        <div className="row">
+          {arr.map((e) => (
+            <Card title={e.titile} price={e.price} action={addToCart} />
+          ))}
         </div>
-      ) : (
-        <>
-          <div className='question-section'>
-            <div className='question-count'>
-              <span>Question {currentQuestion + 1}</span>/{questions.length}
-            </div>
-            <div className='question-text'>{questions[currentQuestion].questionText}</div>
-          </div>
-          <div className='answer-section'>
-            {questions[currentQuestion].answerOptions.map((answerOption) => (
-              <button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
-            ))}
-          </div>
-        </>
-      )}
+      </header>
+
+      <div className="p-5">
+        <Grid container>
+          {showQuestion ? (
+            <>
+              <Grid md={12} sm={12} xl={12} xs={12} lg={12}>
+                <div className="bg-info p-3 rounded shadow">
+                  <p className="fs-2">{questions[indexNum].question}</p>
+                </div>
+              </Grid>
+              <Grid md={12} sm={12} xl={12} xs={12} lg={12}>
+                <Grid container>
+                  {questions[indexNum].options.map((e, i) => (
+                    <Grid
+                      sx={{ padding: 2 }}
+                      md={6}
+                      sm={6}
+                      xl={12}
+                      xs={12}
+                      lg={6}
+                    >
+                      <Button
+                        onClick={() =>
+                          checkQuestion(questions[indexNum].answer, e)
+                        }
+                        fullWidth={true}
+                        variant="contained"
+                      >
+                        {e}
+                      </Button>
+                    </Grid>
+                  ))}
+                </Grid>
+              </Grid>
+              <Grid md={12} sm={12} xl={12} xs={12} lg={12}>
+                <Typography
+                  sx={{ color: showStatusCorrect ? "green" : "maroon" }}
+                  color="info"
+                  variant="h4"
+                >
+                  {showStatusCorrect ? "Correct" : "incorrect"}
+                  {showStatusCorrect ? <CheckIcon /> : <CloseIcon />}
+                </Typography>
+              </Grid>
+            </>
+          ) : (
+            <Grid md={12} sm={12} xl={12} xs={12} lg={12}>
+              <div className="bg-info text-center">
+                <Typography variant="h3">{score}</Typography>
+              </div>
+            </Grid>
+          )}
+        </Grid>
+      </div>
     </div>
   );
 }
