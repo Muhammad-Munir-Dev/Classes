@@ -28,6 +28,7 @@
   color: #61dafb;
 }
 
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -66,4 +67,20 @@
 }
 .dashboard-card div {
     margin: 15px;
+}
+.custom-a{
+  text-decoration: none;
+}
+.custom-button{
+  margin-top: 20px !important;
+}
+
+.MuiBox-root.css-k008qs {
+  margin-left: 15em!important;
+}
+.dashboard-card.MuiBox-root.css-0 {
+    margin-left: 15em !important;
+}
+main.MuiBox-root.css-1v5u2yv {
+    margin-left: 15em !important;
 }

@@ -8,15 +8,15 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import {Link} from "react-router-dom";
+import {Link,useLocation} from "react-router-dom";
 
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile','Settings'];
+
+// const pages = ['Products', 'Pricing', 'Blog'];
+const settings = ['Logout'];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -36,6 +36,9 @@ const Header = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  const location = useLocation();
+  // let a = '/profile/'.{location.state.name};
+
 
   return (
     <AppBar position="static">
@@ -46,7 +49,7 @@ const Header = () => {
             variant="h6"
             noWrap
             component="a"
-            href="/dashboard"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -71,30 +74,7 @@ const Header = () => {
             >
               <MenuIcon />
             </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+            
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
@@ -122,7 +102,7 @@ const Header = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Munir" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -141,16 +121,19 @@ const Header = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
+              <MenuItem>
+                
+                {/*<Link to={a}>
+                  <Typography textAlign="center">Profile</Typography>
+                </Link>*/}
+              </MenuItem>
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <Link to="/login">
                   <Typography textAlign="center">{setting}</Typography>
+                </Link>
                 </MenuItem>
               ))}
-              <MenuItem key='3' onClick={handleCloseUserMenu}>
-                <Link to="/login">
-                  <Typography textAlign="center">Logout</Typography>
-                </Link>
-              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>
