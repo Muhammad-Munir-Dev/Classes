@@ -42,6 +42,30 @@ export default function ResponsiveDrawer(props: Props) {
     {
       'text':'Orders',
       'url':'orders'
+    },
+    {
+      'text':'Posts',
+      'url':'posts'
+    },
+    {
+      'text':'Comments',
+      'url':'comments'
+    },
+    {
+      'text':'Albums',
+      'url':'albums'
+    },
+    {
+      'text':'Photos',
+      'url':'photos'
+    },
+    {
+      'text':'Todos',
+      'url':'todos'
+    },
+    {
+      'text':'Users',
+      'url':'users'
     }
   ];
   const drawer = (

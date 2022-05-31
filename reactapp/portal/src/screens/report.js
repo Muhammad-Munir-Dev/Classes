@@ -1,7 +1,6 @@
 import '../App.css';
 import Box from '@mui/material/Box';
 import CardCom from '../components/card';
-import Card from '@mui/material/Card';
 
 function Report() {
   return (

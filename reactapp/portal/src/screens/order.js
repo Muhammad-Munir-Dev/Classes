@@ -1,11 +1,22 @@
 import '../App.css';
 import Box from '@mui/material/Box';
-import CardCom from '../components/card';
-import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button'; 
+import axios from 'axios'; 
 const drawerWidth = 240;
 
 function Order() {
+  const hitApi = () =>{
+
+  axios.get('https://jsonplaceholder.typicode.com/todos/3').then((res) =>{
+    console.log(res)
+  })
+  axios.post('https://jsonplaceholder.typicode.com/posts',{name:'ABC'}).then((res) =>{
+    console.log(res)
+  }).catch((err)=>{
+    console.log(err)
+  })
+  }
   return (
     <div className="Order">
       <Box
@@ -39,6 +50,7 @@ function Order() {
               eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
               posuere sollicitudin aliquam ultrices sagittis orci a.
             </Typography>
+            <Button size="small" onClick={hitApi}>Login</Button>
         </Box>
     </div>
   );

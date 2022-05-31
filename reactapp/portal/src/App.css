@@ -84,3 +84,6 @@
 main.MuiBox-root.css-1v5u2yv {
     margin-left: 15em !important;
 }
+.card-display{
+  display: inline-flex;
+}
